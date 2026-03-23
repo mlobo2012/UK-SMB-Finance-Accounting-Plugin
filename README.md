@@ -12,6 +12,8 @@ A Claude Code / Cowork plugin for UK finance and accounting workflows — journa
 > Reconciliation, MTD Filing, Companies House, PAYE/RTI Payroll) with
 > no US equivalent.
 
+> **Getting the most out of this plugin?** If you need help with setup, want it customised to your firm's workflows, or just want to talk through what's possible — [reach out to AI Heroes](https://www.ai-heroes.co/contact). We're building these tools to be as valuable as possible and your input drives that.
+
 ## Commands
 
 | Command | Description |
@@ -95,14 +97,10 @@ Claude generates P&L (Format 1), Balance Sheet, and notes under Companies Act / 
 │   ├── README.md                        # Full plugin documentation
 │   ├── [CONNECTORS.md](finance-uk/CONNECTORS.md) # MCP connector categories
 │   ├── .mcp.json                        # MCP server configuration
-│   └── LICENSE                          # MIT License
-│
-├── marketplace/plugins/finance-uk/      # Marketplace distribution copy
+│   └── LICENSE                          # Apache 2.0 + Commons Clause
 │
 └── .gitignore                           # Git ignore rules
 ```
-
-> **Getting the most out of this plugin?** If you need help with setup, want it customised to your firm's workflows, or just want to talk through what's possible — [reach out to AI Heroes](https://www.ai-heroes.co/contact). We're building these tools to be as valuable as possible and your input drives that.
 
 ## Installation
 
@@ -151,4 +149,4 @@ Built by [AI Heroes](https://www.ai-heroes.co).
 
 ## License
 
-[MIT](finance-uk/LICENSE)
+[Apache 2.0 + Commons Clause](finance-uk/LICENSE) — free for private and internal business use. Commercial resale is not permitted.
