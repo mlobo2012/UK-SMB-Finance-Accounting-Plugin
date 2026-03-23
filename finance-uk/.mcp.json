@@ -1,0 +1,68 @@
+{
+  "mcpServers": {
+    "slack": {
+      "type": "http",
+      "url": "https://mcp.slack.com/mcp"
+    },
+    "bigquery": {
+      "type": "http",
+      "url": "https://bigquery.googleapis.com/mcp"
+    },
+    "ms365": {
+      "type": "http",
+      "url": "https://microsoft365.mcp.claude.com/mcp"
+    },
+    "gmail": {
+      "type": "http",
+      "url": "https://gmail.mcp.claude.com/mcp"
+    },
+    "google-calendar": {
+      "type": "http",
+      "url": "https://gcal.mcp.claude.com/mcp"
+    },
+    "xero": {
+      "command": "npx",
+      "args": ["-y", "@xeroapi/xero-mcp-server@latest"],
+      "env": {
+        "XERO_CLIENT_ID": "",
+        "XERO_CLIENT_SECRET": ""
+      },
+      "description": "Official Xero MCP Server (https://github.com/xeroapi/xero-mcp-server) — contacts, chart of accounts, invoices, bank transactions, manual journals, payroll. Requires Xero Custom Connection credentials. Set up at https://developer.xero.com/documentation/guides/oauth2/custom-connections/"
+    },
+    "sage": {
+      "type": "http",
+      "url": "",
+      "description": "Sage 50 / Sage 200 / Sage Business Cloud — UK's most widely used SMB accounting platform."
+    },
+    "freeagent": {
+      "type": "http",
+      "url": "",
+      "description": "FreeAgent — accounting software for UK freelancers and sole traders."
+    },
+    "quickbooks-uk": {
+      "type": "http",
+      "url": "",
+      "description": "QuickBooks UK — cloud accounting with UK-specific VAT, CIS, and MTD support."
+    },
+    "hmrc-mtd": {
+      "type": "http",
+      "url": "",
+      "description": "HMRC Making Tax Digital API — VAT return submission, obligation retrieval, and ITSA quarterly updates."
+    },
+    "companies-house": {
+      "type": "http",
+      "url": "",
+      "description": "Companies House API — company search, filing history, officers, PSC register, accounts filing."
+    },
+    "open-banking": {
+      "type": "http",
+      "url": "",
+      "description": "Open Banking API — AISP access to UK bank accounts for real-time balances and transaction feeds."
+    },
+    "wise": {
+      "type": "http",
+      "url": "",
+      "description": "Wise API — multi-currency business account, international payments, and transaction history."
+    }
+  }
+}

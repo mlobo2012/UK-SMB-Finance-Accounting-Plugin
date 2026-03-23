@@ -1,0 +1,11 @@
+test-data/
+test-outputs/
+*.docx
+*.zip
+ANTHROPIC_PLUGIN_ANALYSIS.md
+UK-SMB-FINANCE-PLUGIN-SPEC.md
+FIX-AND-TEST-REPORT*
+QA-REPORT*
+SKILL-TEST-REPORT*
+marketplace/
+.DS_Store
