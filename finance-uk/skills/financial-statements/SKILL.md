@@ -3,7 +3,6 @@ name: financial-statements
 description: Generate UK financial statements per FRS 102/IFRS — Profit and Loss Account (Format 1 and 2), Balance Sheet (Companies Act format), Cash Flow Statement, and Statement of Changes in Equity. Supports company size-aware presentation with configurable statutory templates.
 user-invocable: true
 argument-hint: "<period-type> <period> — period-types: monthly, quarterly, annual, ytd"
-allowed-tools: [Read, Glob, Grep]
 ---
 
 # Financial Statements Command — /financial-statements

@@ -3,7 +3,6 @@ name: vat-reconciliation
 description: Perform VAT control account reconciliation and prepare the 9-box MTD return for UK businesses. Reconciles output VAT, input VAT, and net liability. Handles standard, reduced, zero-rated, exempt, and reverse charge transactions.
 user-invocable: true
 argument-hint: "<period> — format: YYYY-QX (e.g., 2025-Q2)"
-allowed-tools: [Read, Glob, Grep]
 ---
 
 # VAT Reconciliation Command — /vat-reconciliation

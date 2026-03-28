@@ -3,7 +3,6 @@ name: variance-analysis
 description: Perform variance decomposition and narrative analysis for UK businesses — price/volume/mix analysis, waterfall charts, and materiality assessment. All amounts in GBP with UK formatting.
 user-invocable: true
 argument-hint: "<line-item> <period> vs <comparison>"
-allowed-tools: [Read, Glob, Grep]
 ---
 
 # Variance Analysis Command — /variance-analysis

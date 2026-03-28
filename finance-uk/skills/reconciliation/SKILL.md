@@ -3,7 +3,6 @@ name: reconciliation
 description: Perform account reconciliations for UK businesses — bank reconciliation (Open Banking/BACS/FPS), GL-to-subledger, intercompany matching, and VAT control account. All amounts in GBP.
 user-invocable: true
 argument-hint: "<type> <period> — types: bank, gl-subledger, intercompany"
-allowed-tools: [Read, Glob, Grep]
 ---
 
 # Reconciliation Command — /reconciliation

@@ -3,7 +3,6 @@ name: mtd-filing
 description: Prepare and file Making Tax Digital submissions for UK businesses — VAT (MTD) quarterly returns and ITSA quarterly updates. Covers HMRC API connection, fraud prevention headers, filing deadlines, and penalty regime.
 user-invocable: true
 argument-hint: "<type> <period> — types: vat, itsa"
-allowed-tools: [Read, Glob, Grep]
 ---
 
 # MTD Filing Command — /mtd-filing

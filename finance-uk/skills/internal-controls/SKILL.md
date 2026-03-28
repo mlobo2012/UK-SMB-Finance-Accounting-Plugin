@@ -3,7 +3,6 @@ name: internal-controls
 description: Run internal controls testing for UK companies — aligned with UK Corporate Governance Code, ISA (UK), and Companies Act 2006. Tests across 9 control domains.
 user-invocable: true
 argument-hint: "<scope> <period> — scopes: revenue-recognition, procure-to-pay, payroll, cash-management, fixed-assets, vat-compliance, financial-close, it-general-controls, entity-level"
-allowed-tools: [Read, Glob, Grep]
 ---
 
 # Internal Controls Testing Command — /internal-controls
