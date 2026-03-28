@@ -1,7 +1,6 @@
 ---
 name: journal-entry-prep
 description: Use this skill when the user is preparing, reviewing, or discussing UK journal entries, accruals, prepayments, depreciation, payroll journals, or asks about UK accounting entry best practices. Provides FRS 102/IFRS guidance, UK tax treatments, approval matrices, and documentation standards for GBP-denominated entries.
-user-invocable: false
 ---
 
 # Journal Entry Preparation — UK Best Practices

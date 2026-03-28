@@ -1,7 +1,6 @@
 ---
 name: controls-testing
 description: Use this skill when the user discusses internal controls, audit preparation, control testing, deficiency classification, governance compliance, or risk assessment for a UK company. Provides comprehensive methodology aligned with UK Corporate Governance Code (2024), ISA (UK) 315/330/265, and Companies Act 2006.
-user-invocable: false
 ---
 
 # Internal Controls Testing — UK Framework

@@ -1,7 +1,6 @@
 ---
 name: close-management
 description: Use this skill when the user discusses month-end close, year-end close, close process, close checklist, or period-end activities for a UK business. Provides a 5-day close calendar with VAT, PAYE, and Companies House activities, plus an accelerated 3-day option and a sole trader simplified close.
-user-invocable: false
 ---
 
 # Close Management — UK Month-End Process

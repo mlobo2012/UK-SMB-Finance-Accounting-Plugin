@@ -1,7 +1,6 @@
 ---
 name: journal-entry
 description: Generate UK journal entries with correct FRS 102/IFRS treatment, GBP amounts, and UK-specific accrual types including employer NIC, auto-enrolment pension, and VAT.
-user-invocable: true
 argument-hint: "<type> <period> — types: ap-accrual, fixed-assets, prepaid, payroll, revenue"
 ---
 

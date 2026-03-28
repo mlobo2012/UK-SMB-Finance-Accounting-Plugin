@@ -1,7 +1,6 @@
 ---
 name: payroll-uk
 description: Use this skill when the user discusses UK payroll, PAYE, National Insurance, employer NIC, auto-enrolment pensions, RTI, statutory payments (SSP, SMP, SPP), student loans, P11D, or payroll journal entries. Provides 2025/26 rates and thresholds for accounting purposes.
-user-invocable: false
 ---
 
 # UK Payroll Reference — 2025/26

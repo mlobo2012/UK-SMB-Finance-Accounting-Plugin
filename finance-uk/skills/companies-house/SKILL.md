@@ -1,7 +1,6 @@
 ---
 name: companies-house
 description: Prepare Companies House filings, track deadlines, and classify company size under Companies Act 2006. Covers annual accounts, confirmation statements, audit exemption, abridged/filleted accounts, and iXBRL tagging. Also covers sole trader and partnership filing obligations.
-user-invocable: true
 argument-hint: "<action> <period> — actions: annual-accounts, confirmation-statement, deadlines"
 ---
 
