@@ -1,0 +1,52 @@
+[
+  {
+    "args": [
+      "--calc-type",
+      "employer_nic_secondary",
+      "--event-date",
+      "2026-04-06",
+      "--facts",
+      "{\"annual_earnings\":60000}"
+    ],
+    "expected": {
+      "ok": true,
+      "result": {
+        "employer_nic_due": 8250.0
+      }
+    }
+  },
+  {
+    "args": [
+      "--calc-type",
+      "mtd_itsa_qualifying_income",
+      "--event-date",
+      "2026-04-06",
+      "--facts",
+      "{\"self_employment_income\":40000,\"property_income\":15000}"
+    ],
+    "expected": {
+      "ok": true,
+      "result": {
+        "mandatory": true,
+        "threshold": 50000.0
+      }
+    }
+  },
+  {
+    "args": [
+      "--calc-type",
+      "corporation_tax_band",
+      "--event-date",
+      "2026-04-21",
+      "--facts",
+      "{\"taxable_profits\":40000,\"company_count_for_limits\":1}"
+    ],
+    "expected": {
+      "ok": true,
+      "result": {
+        "band": "small_profits_rate",
+        "headline_rate": 0.19
+      }
+    }
+  }
+]

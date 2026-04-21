@@ -1,0 +1,75 @@
+[
+  {
+    "args": [
+      "--regime",
+      "payroll",
+      "--parameter",
+      "lower_earnings_limit_year",
+      "--event-date",
+      "2025-06-01"
+    ],
+    "expected": {
+      "ok": true,
+      "value": 6500
+    }
+  },
+  {
+    "args": [
+      "--regime",
+      "payroll",
+      "--parameter",
+      "lower_earnings_limit_year",
+      "--event-date",
+      "2026-06-01"
+    ],
+    "expected": {
+      "ok": true,
+      "value": 6708
+    }
+  },
+  {
+    "args": [
+      "--regime",
+      "payroll",
+      "--parameter",
+      "mandatory_payrolling_bik_from",
+      "--event-date",
+      "2026-07-01"
+    ],
+    "expected": {
+      "ok": true,
+      "value": "2027-04-06",
+      "status": "announced"
+    }
+  },
+  {
+    "args": [
+      "--regime",
+      "companies_house",
+      "--parameter",
+      "cs01_digital_fee",
+      "--event-date",
+      "2026-02-10"
+    ],
+    "expected": {
+      "ok": true,
+      "value": 50
+    }
+  },
+  {
+    "args": [
+      "--regime",
+      "companies_house",
+      "--parameter",
+      "accounts_filing_reforms_state",
+      "--event-date",
+      "2026-04-21"
+    ],
+    "expected": {
+      "ok": true,
+      "value": {
+        "state": "delayed_pending_review"
+      }
+    }
+  }
+]

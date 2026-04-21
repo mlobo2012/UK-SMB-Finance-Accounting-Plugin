@@ -1,0 +1,218 @@
+{
+  "schema_version": 1,
+  "rules": [
+    {
+      "id": "vat_return",
+      "description": "VAT return filing and payment deadline",
+      "entity_types": ["any"],
+      "required_facts": ["period_end"],
+      "rule": {
+        "kind": "fixed_day_second_following_month",
+        "day": 7,
+        "base": "period_end"
+      },
+      "source": {
+        "citation": "VAT returns and deadlines",
+        "guidance_url": "https://www.gov.uk/vat-returns"
+      }
+    },
+    {
+      "id": "mtd_itsa_quarterly_update",
+      "description": "MTD ITSA quarterly update deadline",
+      "entity_types": ["sole_trader", "landlord", "any"],
+      "required_facts": ["period_end"],
+      "rule": {
+        "kind": "fixed_day_second_following_month",
+        "day": 7,
+        "base": "period_end"
+      },
+      "source": {
+        "citation": "MTD ITSA operative dates and quarterly updates",
+        "guidance_url": "https://www.gov.uk/government/publications/extension-of-making-tax-digital-for-income-tax-self-assessment-to-sole-traders-and-landlords/making-tax-digital-for-income-tax-self-assessment-for-sole-traders-and-landlords"
+      }
+    },
+    {
+      "id": "mtd_itsa_final_declaration",
+      "description": "MTD ITSA final declaration deadline",
+      "entity_types": ["sole_trader", "landlord", "any"],
+      "required_facts": ["tax_year_end"],
+      "rule": {
+        "kind": "fixed_annual_after_tax_year",
+        "month": 1,
+        "day": 31
+      },
+      "source": {
+        "citation": "Self Assessment tax return deadlines",
+        "guidance_url": "https://www.gov.uk/self-assessment-tax-returns/deadlines"
+      }
+    },
+    {
+      "id": "sa100_online",
+      "description": "Self Assessment online filing deadline",
+      "entity_types": ["individual", "sole_trader", "partner", "any"],
+      "required_facts": ["tax_year_end"],
+      "rule": {
+        "kind": "fixed_annual_after_tax_year",
+        "month": 1,
+        "day": 31
+      },
+      "source": {
+        "citation": "Self Assessment tax return deadlines",
+        "guidance_url": "https://www.gov.uk/self-assessment-tax-returns/deadlines"
+      }
+    },
+    {
+      "id": "sa100_paper",
+      "description": "Self Assessment paper filing deadline",
+      "entity_types": ["individual", "sole_trader", "partner", "any"],
+      "required_facts": ["tax_year_end"],
+      "rule": {
+        "kind": "fixed_same_year",
+        "month": 10,
+        "day": 31
+      },
+      "source": {
+        "citation": "Self Assessment tax return deadlines",
+        "guidance_url": "https://www.gov.uk/self-assessment-tax-returns/deadlines"
+      }
+    },
+    {
+      "id": "payments_on_account_january",
+      "description": "First payment on account deadline",
+      "entity_types": ["individual", "sole_trader", "partner", "any"],
+      "required_facts": ["tax_year_end"],
+      "rule": {
+        "kind": "fixed_annual_after_tax_year",
+        "month": 1,
+        "day": 31
+      },
+      "source": {
+        "citation": "Self Assessment tax return deadlines",
+        "guidance_url": "https://www.gov.uk/self-assessment-tax-returns/deadlines"
+      }
+    },
+    {
+      "id": "payments_on_account_july",
+      "description": "Second payment on account deadline",
+      "entity_types": ["individual", "sole_trader", "partner", "any"],
+      "required_facts": ["tax_year_end"],
+      "rule": {
+        "kind": "fixed_annual_after_tax_year",
+        "month": 7,
+        "day": 31
+      },
+      "source": {
+        "citation": "Self Assessment tax return deadlines",
+        "guidance_url": "https://www.gov.uk/self-assessment-tax-returns/deadlines"
+      }
+    },
+    {
+      "id": "ct600",
+      "description": "Corporation Tax return filing deadline",
+      "entity_types": ["company", "llp", "any"],
+      "required_facts": ["period_end"],
+      "rule": {
+        "kind": "months_and_days_after",
+        "months": 12,
+        "days": 0,
+        "base": "period_end"
+      },
+      "source": {
+        "citation": "Corporation Tax deadlines",
+        "guidance_url": "https://www.gov.uk/corporation-tax"
+      }
+    },
+    {
+      "id": "ct_payment_non_qip",
+      "description": "Corporation Tax payment deadline for non-QIP companies",
+      "entity_types": ["company", "any"],
+      "required_facts": ["period_end"],
+      "rule": {
+        "kind": "months_and_days_after",
+        "months": 9,
+        "days": 1,
+        "base": "period_end"
+      },
+      "source": {
+        "citation": "Corporation Tax deadlines",
+        "guidance_url": "https://www.gov.uk/corporation-tax"
+      }
+    },
+    {
+      "id": "companies_house_accounts_private",
+      "description": "Private company annual accounts deadline",
+      "entity_types": ["private_company", "llp", "any"],
+      "required_facts": ["period_end"],
+      "rule": {
+        "kind": "months_and_days_after",
+        "months": 9,
+        "days": 0,
+        "base": "period_end"
+      },
+      "source": {
+        "citation": "Prepare annual accounts for a private limited company",
+        "guidance_url": "https://www.gov.uk/annual-accounts"
+      }
+    },
+    {
+      "id": "confirmation_statement",
+      "description": "Confirmation statement deadline",
+      "entity_types": ["company", "llp", "any"],
+      "required_facts": ["review_period_end"],
+      "rule": {
+        "kind": "days_after",
+        "days": 14,
+        "base": "review_period_end"
+      },
+      "source": {
+        "citation": "Confirmation statement guidance",
+        "guidance_url": "https://www.gov.uk/file-your-confirmation-statement-with-companies-house"
+      }
+    },
+    {
+      "id": "p60",
+      "description": "P60 delivery deadline",
+      "entity_types": ["employer", "any"],
+      "required_facts": ["tax_year_end"],
+      "rule": {
+        "kind": "fixed_same_year",
+        "month": 5,
+        "day": 31
+      },
+      "source": {
+        "citation": "End-of-year tasks for employers",
+        "guidance_url": "https://www.gov.uk/payroll-annual-reporting"
+      }
+    },
+    {
+      "id": "p11d",
+      "description": "P11D and P11D(b) filing deadline",
+      "entity_types": ["employer", "any"],
+      "required_facts": ["tax_year_end"],
+      "rule": {
+        "kind": "fixed_same_year",
+        "month": 7,
+        "day": 6
+      },
+      "source": {
+        "citation": "Expenses and benefits for employers",
+        "guidance_url": "https://www.gov.uk/expenses-and-benefits-for-employers"
+      }
+    },
+    {
+      "id": "class_1a_nic_payment",
+      "description": "Class 1A NIC electronic payment deadline",
+      "entity_types": ["employer", "any"],
+      "required_facts": ["tax_year_end"],
+      "rule": {
+        "kind": "fixed_same_year",
+        "month": 7,
+        "day": 22
+      },
+      "source": {
+        "citation": "Expenses and benefits for employers",
+        "guidance_url": "https://www.gov.uk/expenses-and-benefits-for-employers"
+      }
+    }
+  ]
+}

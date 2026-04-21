@@ -1,0 +1,192 @@
+{
+  "schema_version": 1,
+  "regime": "payroll",
+  "parameters": {
+    "employer_nic_rate": {
+      "unit": "ratio",
+      "jurisdiction": "UK",
+      "values": [
+        {
+          "effective_from": "2025-04-06",
+          "effective_to": null,
+          "value": 0.15,
+          "status": "enacted",
+          "source": {
+            "citation": "HMRC rates and thresholds for employers",
+            "guidance_url": "https://www.gov.uk/guidance/rates-and-thresholds-for-employers-2025-to-2026",
+            "verified_on": "2026-04-21"
+          }
+        }
+      ]
+    },
+    "employer_secondary_threshold_year": {
+      "unit": "gbp_per_year",
+      "jurisdiction": "UK",
+      "values": [
+        {
+          "effective_from": "2025-04-06",
+          "effective_to": null,
+          "value": 5000,
+          "status": "enacted",
+          "source": {
+            "citation": "HMRC rates and thresholds for employers",
+            "guidance_url": "https://www.gov.uk/guidance/rates-and-thresholds-for-employers-2025-to-2026",
+            "verified_on": "2026-04-21"
+          }
+        }
+      ]
+    },
+    "lower_earnings_limit_year": {
+      "unit": "gbp_per_year",
+      "jurisdiction": "UK",
+      "values": [
+        {
+          "effective_from": "2025-04-06",
+          "effective_to": "2026-04-05",
+          "value": 6500,
+          "status": "enacted",
+          "source": {
+            "citation": "HMRC rates and thresholds for employers",
+            "guidance_url": "https://www.gov.uk/guidance/rates-and-thresholds-for-employers-2025-to-2026",
+            "verified_on": "2026-04-21"
+          }
+        },
+        {
+          "effective_from": "2026-04-06",
+          "effective_to": null,
+          "value": 6708,
+          "status": "enacted",
+          "source": {
+            "citation": "HMRC rates and thresholds for employers 2026 to 2027",
+            "guidance_url": "https://www.gov.uk/guidance/rates-and-thresholds-for-employers-2026-to-2027",
+            "verified_on": "2026-04-21"
+          }
+        }
+      ]
+    },
+    "class_1a_nic_rate": {
+      "unit": "ratio",
+      "jurisdiction": "UK",
+      "values": [
+        {
+          "effective_from": "2025-04-06",
+          "effective_to": null,
+          "value": 0.15,
+          "status": "enacted",
+          "source": {
+            "citation": "HMRC rates and thresholds for employers",
+            "guidance_url": "https://www.gov.uk/guidance/rates-and-thresholds-for-employers-2025-to-2026",
+            "verified_on": "2026-04-21"
+          }
+        }
+      ]
+    },
+    "employment_allowance_year": {
+      "unit": "gbp_per_year",
+      "jurisdiction": "UK",
+      "values": [
+        {
+          "effective_from": "2025-04-06",
+          "effective_to": null,
+          "value": 10500,
+          "status": "enacted",
+          "source": {
+            "citation": "HMRC rates and thresholds for employers",
+            "guidance_url": "https://www.gov.uk/guidance/rates-and-thresholds-for-employers-2025-to-2026",
+            "verified_on": "2026-04-21"
+          }
+        }
+      ]
+    },
+    "ssp_weekly": {
+      "unit": "gbp_per_week",
+      "jurisdiction": "UK",
+      "values": [
+        {
+          "effective_from": "2025-04-06",
+          "effective_to": "2026-04-05",
+          "value": 118.75,
+          "status": "enacted",
+          "source": {
+            "citation": "HMRC rates and thresholds for employers",
+            "guidance_url": "https://www.gov.uk/guidance/rates-and-thresholds-for-employers-2025-to-2026",
+            "verified_on": "2026-04-21"
+          }
+        },
+        {
+          "effective_from": "2026-04-06",
+          "effective_to": null,
+          "value": 123.25,
+          "status": "enacted",
+          "source": {
+            "citation": "Benefit and pension rates 2026 to 2027",
+            "guidance_url": "https://www.gov.uk/government/publications/benefit-and-pension-rates-2026-to-2027",
+            "verified_on": "2026-04-21"
+          }
+        }
+      ]
+    },
+    "student_loan_plan_1_threshold_year": {
+      "unit": "gbp_per_year",
+      "jurisdiction": "UK",
+      "values": [
+        {
+          "effective_from": "2025-04-06",
+          "effective_to": "2026-04-05",
+          "value": 26065,
+          "status": "enacted",
+          "source": {
+            "citation": "HMRC rates and thresholds for employers",
+            "guidance_url": "https://www.gov.uk/guidance/rates-and-thresholds-for-employers-2025-to-2026",
+            "verified_on": "2026-04-21"
+          }
+        },
+        {
+          "effective_from": "2026-04-06",
+          "effective_to": null,
+          "value": 26900,
+          "status": "enacted",
+          "source": {
+            "citation": "Budget 2025 Annex A: rates and allowances",
+            "guidance_url": "https://www.gov.uk/government/publications/budget-2025-overview-of-tax-legislation-and-rates-ootlar/annex-a-rates-and-allowances",
+            "verified_on": "2026-04-21"
+          }
+        }
+      ]
+    },
+    "mandatory_payrolling_bik_from": {
+      "unit": "date",
+      "jurisdiction": "UK",
+      "values": [
+        {
+          "effective_from": "2025-04-28",
+          "effective_to": null,
+          "value": "2027-04-06",
+          "status": "announced",
+          "source": {
+            "citation": "June 2025 Employer Bulletin",
+            "guidance_url": "https://www.gov.uk/government/publications/employer-bulletin-june-2025/june-2025-issue-of-the-employer-bulletin",
+            "verified_on": "2026-04-21"
+          }
+        }
+      ]
+    },
+    "voluntary_bik_registration_deadline_2026_27": {
+      "unit": "date",
+      "jurisdiction": "UK",
+      "values": [
+        {
+          "effective_from": "2025-04-28",
+          "effective_to": null,
+          "value": "2026-04-05",
+          "status": "announced",
+          "source": {
+            "citation": "Mandatory payrolling interim guidance",
+            "guidance_url": "https://www.gov.uk/guidance/draft-guidance-and-legislation-to-aid-preparation-for-reporting-benefits-in-kind-in-real-time/getting-ready-for-mandatory-payrolling-of-benefits-in-kind",
+            "verified_on": "2026-04-21"
+          }
+        }
+      ]
+    }
+  }
+}

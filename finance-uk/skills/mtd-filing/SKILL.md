@@ -8,6 +8,18 @@ argument-hint: "<type> <period> — types: vat, itsa"
 
 > This skill assists with MTD filing preparation but does not constitute professional tax advice. Ensure your filing software is HMRC-recognised.
 
+## Deterministic Guardrail
+
+Before stating a threshold, phase date, or filing deadline:
+
+```bash
+python3 finance-uk/tools/lookup_rate.py --regime self_assessment --parameter mtd_itsa_phase_1_threshold --event-date 2026-04-06
+python3 finance-uk/tools/find_deadline.py --regime mtd_itsa_quarterly_update --facts '{"period_end":"2026-07-05"}'
+python3 finance-uk/tools/find_deadline.py --regime vat_return --facts '{"period_end":"2026-06-30"}'
+```
+
+If the local tool has no verified record, say so and do not improvise a number or date.
+
 ## Arguments
 
 The user invoked this with: $ARGUMENTS
@@ -93,13 +105,13 @@ Payment methods: Direct Debit (collected ~3 days after deadline), Faster Payment
 | 30 September | 7 November |
 | 31 December | 7 February |
 
-## MTD for Income Tax Self Assessment (Launching April 2026)
+## MTD for Income Tax Self Assessment (Live from 6 April 2026)
 
 | Phase | From | Threshold |
 |-------|------|-----------|
 | Phase 1 | **6 April 2026** | > £50,000 |
 | Phase 2 | 6 April 2027 | > £30,000 |
-| Phase 3 *(proposed)* | 6 April 2028 | > £20,000 |
+| Phase 3 *(announced / planned)* | 6 April 2028 | > £20,000 |
 
 "Qualifying income" = gross income from self-employment and/or UK property before expenses.
 
@@ -113,9 +125,9 @@ Payment methods: Direct Debit (collected ~3 days after deadline), Faster Payment
 | Q4 (6 Jan – 5 Apr) | 7 May |
 | **Final Declaration** | **31 January** following tax year |
 
-Quarterly updates are **cumulative year-to-date figures**. Final Declaration replaces the annual Self Assessment return.
+Quarterly updates are **cumulative year-to-date figures**. Final Declaration remains part of the end-of-year MTD process and is due by **31 January** following the tax year.
 
-**Soft landing:** No penalty points for late quarterly updates in first year (2026/27).
+Treat the 2028 >£20,000 threshold as a future policy item unless the local data layer marks it as enacted for the date being discussed.
 
 ### MTD for Corporation Tax
 

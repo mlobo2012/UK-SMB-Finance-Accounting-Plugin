@@ -277,7 +277,7 @@ For all companies with related-party balances (especially director's loans):
 
 1. **Build the account from scratch** — do not work backwards from prior year totals. Start with opening balance, add each transaction, arrive at closing balance.
 2. **Reconcile to source documents** — match every movement to bank statements, invoices, or board minutes.
-3. **Check s.455 tax** — if director's loan account is overdrawn at year end, corporation tax at 33.75% is due on the balance (repayable if loan repaid within 9 months of year end).
+3. **Check s.455 tax using the local lookup layer** — the rate is date-sensitive. It was 33.75% up to 5 April 2026, with 35.75% stored from 6 April 2026 in the local data set. Do not quote this from memory.
 4. **Disclosure** — FRS 102 Section 33 requires disclosure of all related-party transactions and balances, including terms and conditions.
 
 ## Step 5b: Comparative Period Restatement
@@ -295,7 +295,7 @@ All templates are configurable. The user may:
 - Add or remove line items within statutory categories
 - Switch between Format 1 and Format 2 for the P&L
 - Prepare abridged accounts (small companies with unanimous member consent)
-- Prepare filleted accounts for Companies House (omit P&L and/or directors' report)
+- Prepare filleted accounts for Companies House (omit P&L and/or directors' report) where current Companies House rules still permit it
 - Add comparative period columns
 - Add budget columns for management accounts
 - Present in £, £'000, or £m

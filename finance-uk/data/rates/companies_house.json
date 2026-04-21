@@ -1,0 +1,190 @@
+{
+  "schema_version": 1,
+  "regime": "companies_house",
+  "parameters": {
+    "cs01_digital_fee": {
+      "unit": "gbp",
+      "jurisdiction": "UK",
+      "values": [
+        {
+          "effective_from": "2016-06-30",
+          "effective_to": "2026-01-31",
+          "value": 34,
+          "status": "enacted",
+          "source": {
+            "citation": "Companies House historical fee schedule",
+            "guidance_url": "https://www.gov.uk/government/publications/companies-house-fees/companies-house-fees",
+            "verified_on": "2026-04-21"
+          }
+        },
+        {
+          "effective_from": "2026-02-01",
+          "effective_to": null,
+          "value": 50,
+          "status": "enacted",
+          "source": {
+            "citation": "Companies House fees are changing from 1 February 2026",
+            "guidance_url": "https://www.gov.uk/government/news/companies-house-fees-are-changing-from-1-february-2026",
+            "verified_on": "2026-04-21"
+          }
+        }
+      ]
+    },
+    "cs01_paper_fee": {
+      "unit": "gbp",
+      "jurisdiction": "UK",
+      "values": [
+        {
+          "effective_from": "2026-02-01",
+          "effective_to": null,
+          "value": 110,
+          "status": "enacted",
+          "source": {
+            "citation": "Companies House fees",
+            "guidance_url": "https://www.gov.uk/government/publications/companies-house-fees/companies-house-fees",
+            "verified_on": "2026-04-21"
+          }
+        }
+      ]
+    },
+    "incorporation_digital_fee": {
+      "unit": "gbp",
+      "jurisdiction": "UK",
+      "values": [
+        {
+          "effective_from": "2026-02-01",
+          "effective_to": null,
+          "value": 100,
+          "status": "enacted",
+          "source": {
+            "citation": "Companies House fees are changing from 1 February 2026",
+            "guidance_url": "https://www.gov.uk/government/news/companies-house-fees-are-changing-from-1-february-2026",
+            "verified_on": "2026-04-21"
+          }
+        }
+      ]
+    },
+    "ds01_digital_fee": {
+      "unit": "gbp",
+      "jurisdiction": "UK",
+      "values": [
+        {
+          "effective_from": "2026-02-01",
+          "effective_to": null,
+          "value": 13,
+          "status": "enacted",
+          "source": {
+            "citation": "Companies House fees are changing from 1 February 2026",
+            "guidance_url": "https://www.gov.uk/government/news/companies-house-fees-are-changing-from-1-february-2026",
+            "verified_on": "2026-04-21"
+          }
+        }
+      ]
+    },
+    "micro_turnover_threshold": {
+      "unit": "gbp",
+      "jurisdiction": "UK",
+      "values": [
+        {
+          "effective_from": "2025-04-06",
+          "effective_to": null,
+          "value": 1000000,
+          "status": "enacted",
+          "source": {
+            "citation": "Prepare annual accounts for a private limited company",
+            "guidance_url": "https://www.gov.uk/annual-accounts/microentities-small-and-dormant-companies",
+            "verified_on": "2026-04-21"
+          }
+        }
+      ]
+    },
+    "small_turnover_threshold": {
+      "unit": "gbp",
+      "jurisdiction": "UK",
+      "values": [
+        {
+          "effective_from": "2025-04-06",
+          "effective_to": null,
+          "value": 15000000,
+          "status": "enacted",
+          "source": {
+            "citation": "Prepare annual accounts for a private limited company",
+            "guidance_url": "https://www.gov.uk/annual-accounts/microentities-small-and-dormant-companies",
+            "verified_on": "2026-04-21"
+          }
+        }
+      ]
+    },
+    "small_balance_sheet_threshold": {
+      "unit": "gbp",
+      "jurisdiction": "UK",
+      "values": [
+        {
+          "effective_from": "2025-04-06",
+          "effective_to": null,
+          "value": 7500000,
+          "status": "enacted",
+          "source": {
+            "citation": "Prepare annual accounts for a private limited company",
+            "guidance_url": "https://www.gov.uk/annual-accounts/microentities-small-and-dormant-companies",
+            "verified_on": "2026-04-21"
+          }
+        }
+      ]
+    },
+    "mandatory_identity_verification_start": {
+      "unit": "date",
+      "jurisdiction": "UK",
+      "values": [
+        {
+          "effective_from": "2025-08-05",
+          "effective_to": null,
+          "value": "2025-11-18",
+          "status": "enacted",
+          "source": {
+            "citation": "Companies House confirms identity verification rollout",
+            "guidance_url": "https://www.gov.uk/government/news/companies-house-confirms-identity-verification-rollout-from-18-november-2025",
+            "verified_on": "2026-04-21"
+          }
+        }
+      ]
+    },
+    "existing_director_transition_end": {
+      "unit": "date",
+      "jurisdiction": "UK",
+      "values": [
+        {
+          "effective_from": "2025-08-05",
+          "effective_to": null,
+          "value": "2026-11-17",
+          "status": "enacted",
+          "source": {
+            "citation": "Companies House confirms identity verification rollout",
+            "guidance_url": "https://www.gov.uk/government/news/companies-house-confirms-identity-verification-rollout-from-18-november-2025",
+            "verified_on": "2026-04-21"
+          }
+        }
+      ]
+    },
+    "accounts_filing_reforms_state": {
+      "unit": "policy",
+      "jurisdiction": "UK",
+      "values": [
+        {
+          "effective_from": "2026-01-28",
+          "effective_to": null,
+          "value": {
+            "state": "delayed_pending_review",
+            "summary": "Changes to accounts filing will not be introduced in April 2027 and companies will receive at least 21 months' notice before any change."
+          },
+          "status": "announced",
+          "source": {
+            "citation": "Filing your Companies House accounts",
+            "guidance_url": "https://www.gov.uk/government/publications/life-of-a-company-annual-requirements",
+            "verified_on": "2026-04-21"
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "regime": "companies_house",
+  "forms": [
+    {
+      "code": "IN01",
+      "name": "Application to register a company",
+      "effective_from": "2023-01-01",
+      "effective_to": null,
+      "status": "active",
+      "source": {
+        "guidance_url": "https://www.gov.uk/government/collections/companies-house-forms-for-limited-companies"
+      }
+    },
+    {
+      "code": "AP01",
+      "name": "Appointment of director",
+      "effective_from": "2023-01-01",
+      "effective_to": null,
+      "status": "active",
+      "source": {
+        "guidance_url": "https://www.gov.uk/government/collections/companies-house-forms-for-limited-companies"
+      }
+    },
+    {
+      "code": "TM01",
+      "name": "Termination of appointment of director",
+      "effective_from": "2023-01-01",
+      "effective_to": null,
+      "status": "active",
+      "source": {
+        "guidance_url": "https://www.gov.uk/government/collections/companies-house-forms-for-limited-companies"
+      }
+    },
+    {
+      "code": "CS01",
+      "name": "Confirmation statement",
+      "effective_from": "2023-01-01",
+      "effective_to": null,
+      "status": "active",
+      "source": {
+        "guidance_url": "https://www.gov.uk/government/publications/confirmation-statement-form-cs01-new-version"
+      }
+    },
+    {
+      "code": "SH01",
+      "name": "Return of allotment of shares",
+      "effective_from": "2023-01-01",
+      "effective_to": null,
+      "status": "active",
+      "source": {
+        "guidance_url": "https://www.gov.uk/government/collections/companies-house-forms-for-limited-companies"
+      }
+    },
+    {
+      "code": "MR01",
+      "name": "Particulars of a charge",
+      "effective_from": "2023-01-01",
+      "effective_to": null,
+      "status": "active",
+      "source": {
+        "guidance_url": "https://www.gov.uk/government/collections/companies-house-forms-for-limited-companies"
+      }
+    },
+    {
+      "code": "DS01",
+      "name": "Striking off application by a company",
+      "effective_from": "2023-01-01",
+      "effective_to": null,
+      "status": "active",
+      "source": {
+        "guidance_url": "https://www.gov.uk/government/collections/companies-house-forms-for-limited-companies"
+      }
+    },
+    {
+      "code": "NM01",
+      "name": "Change of company name",
+      "effective_from": "2023-01-01",
+      "effective_to": null,
+      "status": "active",
+      "source": {
+        "guidance_url": "https://www.gov.uk/government/collections/companies-house-forms-for-limited-companies"
+      }
+    }
+  ]
+}

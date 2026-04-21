@@ -1,0 +1,159 @@
+{
+  "schema_version": 1,
+  "regime": "vat",
+  "parameters": {
+    "standard_rate": {
+      "unit": "ratio",
+      "jurisdiction": "UK",
+      "values": [
+        {
+          "effective_from": "2011-01-04",
+          "effective_to": null,
+          "value": 0.20,
+          "status": "enacted",
+          "source": {
+            "citation": "VAT rates on different goods and services",
+            "guidance_url": "https://www.gov.uk/vat-rates",
+            "verified_on": "2026-04-21"
+          }
+        }
+      ]
+    },
+    "reduced_rate": {
+      "unit": "ratio",
+      "jurisdiction": "UK",
+      "values": [
+        {
+          "effective_from": "1997-09-01",
+          "effective_to": null,
+          "value": 0.05,
+          "status": "enacted",
+          "source": {
+            "citation": "VAT rates on different goods and services",
+            "guidance_url": "https://www.gov.uk/vat-rates",
+            "verified_on": "2026-04-21"
+          }
+        }
+      ]
+    },
+    "zero_rate": {
+      "unit": "ratio",
+      "jurisdiction": "UK",
+      "values": [
+        {
+          "effective_from": "1973-04-01",
+          "effective_to": null,
+          "value": 0.0,
+          "status": "enacted",
+          "source": {
+            "citation": "VAT rates on different goods and services",
+            "guidance_url": "https://www.gov.uk/vat-rates",
+            "verified_on": "2026-04-21"
+          }
+        }
+      ]
+    },
+    "registration_threshold": {
+      "unit": "gbp_rolling_12_months",
+      "jurisdiction": "UK",
+      "values": [
+        {
+          "effective_from": "2024-04-01",
+          "effective_to": null,
+          "value": 90000,
+          "status": "enacted",
+          "source": {
+            "citation": "Register for VAT",
+            "guidance_url": "https://www.gov.uk/register-for-vat",
+            "verified_on": "2026-04-21"
+          }
+        }
+      ]
+    },
+    "deregistration_threshold": {
+      "unit": "gbp_rolling_12_months",
+      "jurisdiction": "UK",
+      "values": [
+        {
+          "effective_from": "2024-04-01",
+          "effective_to": null,
+          "value": 88000,
+          "status": "enacted",
+          "source": {
+            "citation": "Register for VAT",
+            "guidance_url": "https://www.gov.uk/register-for-vat",
+            "verified_on": "2026-04-21"
+          }
+        }
+      ]
+    },
+    "flat_rate_scheme_join_threshold": {
+      "unit": "gbp_per_year_ex_vat",
+      "jurisdiction": "UK",
+      "values": [
+        {
+          "effective_from": "2017-04-01",
+          "effective_to": null,
+          "value": 150000,
+          "status": "enacted",
+          "source": {
+            "citation": "VAT Notice 733",
+            "guidance_url": "https://www.gov.uk/guidance/vat-flat-rate-scheme-how-much-you-pay",
+            "verified_on": "2026-04-21"
+          }
+        }
+      ]
+    },
+    "cash_accounting_join_threshold": {
+      "unit": "gbp_per_year",
+      "jurisdiction": "UK",
+      "values": [
+        {
+          "effective_from": "2013-04-01",
+          "effective_to": null,
+          "value": 1350000,
+          "status": "enacted",
+          "source": {
+            "citation": "VAT Cash Accounting Scheme",
+            "guidance_url": "https://www.gov.uk/vat-cash-accounting-scheme",
+            "verified_on": "2026-04-21"
+          }
+        }
+      ]
+    },
+    "annual_accounting_join_threshold": {
+      "unit": "gbp_per_year",
+      "jurisdiction": "UK",
+      "values": [
+        {
+          "effective_from": "2013-04-01",
+          "effective_to": null,
+          "value": 1350000,
+          "status": "enacted",
+          "source": {
+            "citation": "VAT Annual Accounting Scheme",
+            "guidance_url": "https://www.gov.uk/vat-annual-accounting-scheme",
+            "verified_on": "2026-04-21"
+          }
+        }
+      ]
+    },
+    "mtd_for_vat_mandatory_from": {
+      "unit": "date",
+      "jurisdiction": "UK",
+      "values": [
+        {
+          "effective_from": "2022-04-01",
+          "effective_to": null,
+          "value": "2022-04-01",
+          "status": "enacted",
+          "source": {
+            "citation": "VAT Notice 700/22",
+            "guidance_url": "https://www.gov.uk/guidance/making-tax-digital-for-vat",
+            "verified_on": "2026-04-21"
+          }
+        }
+      ]
+    }
+  }
+}

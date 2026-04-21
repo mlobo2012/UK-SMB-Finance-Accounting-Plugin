@@ -1,0 +1,156 @@
+{
+  "schema_version": 1,
+  "regime": "ct600",
+  "forms": [
+    {
+      "code": "CT600A",
+      "name": "Loans to participators by close companies",
+      "effective_from": "2023-04-01",
+      "effective_to": null,
+      "status": "active",
+      "source": {
+        "guidance_url": "https://www.gov.uk/government/publications/corporation-tax-company-tax-return-guide-ct600-guide"
+      }
+    },
+    {
+      "code": "CT600B",
+      "name": "Controlled foreign companies, hybrid mismatches, bank levy",
+      "effective_from": "2023-04-01",
+      "effective_to": null,
+      "status": "active",
+      "source": {
+        "guidance_url": "https://www.gov.uk/government/publications/corporation-tax-company-tax-return-guide-ct600-guide"
+      }
+    },
+    {
+      "code": "CT600C",
+      "name": "Group and consortium relief",
+      "effective_from": "2023-04-01",
+      "effective_to": null,
+      "status": "active",
+      "source": {
+        "guidance_url": "https://www.gov.uk/government/publications/corporation-tax-company-tax-return-guide-ct600-guide"
+      }
+    },
+    {
+      "code": "CT600D",
+      "name": "Insurance",
+      "effective_from": "2023-04-01",
+      "effective_to": null,
+      "status": "active",
+      "source": {
+        "guidance_url": "https://www.gov.uk/government/publications/corporation-tax-company-tax-return-guide-ct600-guide"
+      }
+    },
+    {
+      "code": "CT600E",
+      "name": "Charities and community amateur sports clubs",
+      "effective_from": "2023-04-01",
+      "effective_to": null,
+      "status": "active",
+      "source": {
+        "guidance_url": "https://www.gov.uk/government/publications/corporation-tax-company-tax-return-guide-ct600-guide"
+      }
+    },
+    {
+      "code": "CT600F",
+      "name": "Tonnage tax",
+      "effective_from": "2023-04-01",
+      "effective_to": null,
+      "status": "active",
+      "source": {
+        "guidance_url": "https://www.gov.uk/government/publications/corporation-tax-company-tax-return-guide-ct600-guide"
+      }
+    },
+    {
+      "code": "CT600G",
+      "name": "Reserved",
+      "effective_from": "2023-04-01",
+      "effective_to": null,
+      "status": "reserved",
+      "source": {
+        "guidance_url": "https://www.gov.uk/government/publications/corporation-tax-company-tax-return-guide-ct600-guide"
+      }
+    },
+    {
+      "code": "CT600H",
+      "name": "Cross-border royalties",
+      "effective_from": "2023-04-01",
+      "effective_to": null,
+      "status": "active",
+      "source": {
+        "guidance_url": "https://www.gov.uk/government/publications/corporation-tax-company-tax-return-guide-ct600-guide"
+      }
+    },
+    {
+      "code": "CT600I",
+      "name": "Oil and gas supplementary charge",
+      "effective_from": "2023-04-01",
+      "effective_to": null,
+      "status": "active",
+      "source": {
+        "guidance_url": "https://www.gov.uk/government/publications/corporation-tax-company-tax-return-guide-ct600-guide"
+      }
+    },
+    {
+      "code": "CT600J",
+      "name": "Disclosure of tax avoidance schemes",
+      "effective_from": "2023-04-01",
+      "effective_to": null,
+      "status": "active",
+      "source": {
+        "guidance_url": "https://www.gov.uk/government/publications/corporation-tax-company-tax-return-guide-ct600-guide"
+      }
+    },
+    {
+      "code": "CT600K",
+      "name": "Restitution tax",
+      "effective_from": "2023-04-01",
+      "effective_to": null,
+      "status": "active",
+      "source": {
+        "guidance_url": "https://www.gov.uk/government/publications/corporation-tax-company-tax-return-guide-ct600-guide"
+      }
+    },
+    {
+      "code": "CT600L",
+      "name": "Research and Development",
+      "effective_from": "2024-04-01",
+      "effective_to": null,
+      "status": "active",
+      "source": {
+        "guidance_url": "https://www.gov.uk/government/publications/corporation-tax-company-tax-return-guide-ct600-guide"
+      }
+    },
+    {
+      "code": "CT600M",
+      "name": "Freeports and Investment Zones",
+      "effective_from": "2023-04-01",
+      "effective_to": null,
+      "status": "active",
+      "source": {
+        "guidance_url": "https://www.gov.uk/government/publications/corporation-tax-company-tax-return-guide-ct600-guide"
+      }
+    },
+    {
+      "code": "CT600N",
+      "name": "Residential Property Developer Tax",
+      "effective_from": "2023-04-01",
+      "effective_to": null,
+      "status": "active",
+      "source": {
+        "guidance_url": "https://www.gov.uk/government/publications/corporation-tax-company-tax-return-guide-ct600-guide"
+      }
+    },
+    {
+      "code": "CT600P",
+      "name": "Creative industry reliefs",
+      "effective_from": "2024-04-01",
+      "effective_to": null,
+      "status": "active",
+      "source": {
+        "guidance_url": "https://www.gov.uk/government/publications/corporation-tax-company-tax-return-guide-ct600-guide"
+      }
+    }
+  ]
+}

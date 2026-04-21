@@ -8,6 +8,15 @@ argument-hint: "<type> <period> — types: ap-accrual, fixed-assets, prepaid, pa
 
 > This skill assists with journal entry generation but does not constitute professional accounting advice. Consult a qualified accountant for decisions affecting your business.
 
+## Deterministic Guardrail
+
+For payroll, VAT, corporation tax, and Companies House numbers, use the local lookup tools before writing the entry narrative:
+
+```bash
+python3 finance-uk/tools/lookup_rate.py --regime payroll --parameter employer_nic_rate --event-date 2026-04-06
+python3 finance-uk/tools/lookup_rate.py --regime corporation_tax --parameter main_pool_wda_rate --event-date 2026-04-01
+```
+
 ## Arguments
 
 The user invoked this with: $ARGUMENTS
@@ -120,7 +129,7 @@ Always use:
 
 For sole traders and micro-entities, the approval matrix may be simplified to owner review for all entries above a self-determined threshold.
 
-### Key Reference: Capital Allowances (2025/26)
+### Key Reference: Capital Allowances (verify for the period)
 
 | Allowance | Rate | Eligibility |
 |-----------|------|-------------|
@@ -134,4 +143,3 @@ Note: Main pool WDA rate drops to 14% from 1 April 2026.
 ### Key Reference: Documentation Standards
 
 Every journal entry must include: preparer name and date, period and entity, clear description/narrative, supporting calculation reference, reversing indicator, account codes, and VAT treatment.
-

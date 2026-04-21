@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "regime": "self_assessment",
+  "forms": [
+    {
+      "code": "SA101",
+      "name": "Additional information",
+      "effective_from": "2023-04-06",
+      "effective_to": null,
+      "status": "active",
+      "source": {
+        "guidance_url": "https://www.gov.uk/self-assessment-forms-and-helpsheets"
+      }
+    },
+    {
+      "code": "SA102",
+      "name": "Employment",
+      "effective_from": "2023-04-06",
+      "effective_to": null,
+      "status": "active",
+      "source": {
+        "guidance_url": "https://www.gov.uk/self-assessment-forms-and-helpsheets"
+      }
+    },
+    {
+      "code": "SA103S",
+      "name": "Self-employment short",
+      "effective_from": "2023-04-06",
+      "effective_to": null,
+      "status": "active",
+      "source": {
+        "guidance_url": "https://www.gov.uk/self-assessment-forms-and-helpsheets"
+      }
+    },
+    {
+      "code": "SA103F",
+      "name": "Self-employment full",
+      "effective_from": "2023-04-06",
+      "effective_to": null,
+      "status": "active",
+      "source": {
+        "guidance_url": "https://www.gov.uk/self-assessment-forms-and-helpsheets"
+      }
+    },
+    {
+      "code": "SA104S",
+      "name": "Partnership short",
+      "effective_from": "2023-04-06",
+      "effective_to": null,
+      "status": "active",
+      "source": {
+        "guidance_url": "https://www.gov.uk/self-assessment-forms-and-helpsheets"
+      }
+    },
+    {
+      "code": "SA104F",
+      "name": "Partnership full",
+      "effective_from": "2023-04-06",
+      "effective_to": null,
+      "status": "active",
+      "source": {
+        "guidance_url": "https://www.gov.uk/self-assessment-forms-and-helpsheets"
+      }
+    },
+    {
+      "code": "SA105",
+      "name": "UK property",
+      "effective_from": "2023-04-06",
+      "effective_to": null,
+      "status": "active",
+      "source": {
+        "guidance_url": "https://www.gov.uk/self-assessment-forms-and-helpsheets"
+      }
+    },
+    {
+      "code": "SA106",
+      "name": "Foreign",
+      "effective_from": "2023-04-06",
+      "effective_to": null,
+      "status": "active",
+      "source": {
+        "guidance_url": "https://www.gov.uk/self-assessment-forms-and-helpsheets"
+      }
+    },
+    {
+      "code": "SA107",
+      "name": "Trusts etc",
+      "effective_from": "2023-04-06",
+      "effective_to": null,
+      "status": "active",
+      "source": {
+        "guidance_url": "https://www.gov.uk/self-assessment-forms-and-helpsheets"
+      }
+    },
+    {
+      "code": "SA108",
+      "name": "Capital gains summary",
+      "effective_from": "2023-04-06",
+      "effective_to": null,
+      "status": "active",
+      "source": {
+        "guidance_url": "https://www.gov.uk/self-assessment-forms-and-helpsheets"
+      }
+    },
+    {
+      "code": "SA109",
+      "name": "Residence, remittance basis etc",
+      "effective_from": "2023-04-06",
+      "effective_to": null,
+      "status": "active",
+      "source": {
+        "guidance_url": "https://www.gov.uk/self-assessment-forms-and-helpsheets"
+      }
+    }
+  ]
+}

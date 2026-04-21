@@ -8,13 +8,24 @@ argument-hint: "<period> — format: YYYY-QX (e.g., 2025-Q2)"
 
 > This skill assists with VAT reconciliation and return preparation but does not constitute professional tax advice. Consult a VAT specialist for complex transactions or partial exemption calculations.
 
+## Deterministic Guardrail
+
+Before stating a VAT threshold or filing deadline:
+
+```bash
+python3 finance-uk/tools/lookup_rate.py --regime vat --parameter registration_threshold --event-date 2026-04-21
+python3 finance-uk/tools/find_deadline.py --regime vat_return --facts '{"period_end":"2026-06-30"}'
+```
+
+Use the tool result and source. If the tool cannot verify the figure, do not guess.
+
 ## Arguments
 
 The user invoked this with: $ARGUMENTS
 
 Parse the period (e.g., `2025-Q2` for April–June 2025).
 
-## VAT Rates (2025/26)
+## VAT Rates (Current; verify by date)
 
 | Rate | Percentage | Common Applications |
 |------|-----------|---------------------|

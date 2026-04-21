@@ -1,0 +1,29 @@
+[
+  {
+    "args": [
+      "--regime",
+      "ct600",
+      "--event-date",
+      "2026-04-21"
+    ],
+    "expected_contains": ["CT600A", "CT600L", "CT600P"]
+  },
+  {
+    "args": [
+      "--regime",
+      "self_assessment",
+      "--event-date",
+      "2026-04-21"
+    ],
+    "expected_contains": ["SA101", "SA105", "SA109"]
+  },
+  {
+    "args": [
+      "--regime",
+      "companies_house",
+      "--event-date",
+      "2026-04-21"
+    ],
+    "expected_contains": ["IN01", "CS01", "MR01"]
+  }
+]

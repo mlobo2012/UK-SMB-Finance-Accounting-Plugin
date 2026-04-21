@@ -44,13 +44,19 @@ A Claude Code / Cowork plugin for UK finance and accounting workflows — journa
 | vat-reconciliation | VAT control account reconciliation, 9-box return, partial exemption, reverse charge |
 | mtd-filing | HMRC MTD VAT & ITSA filing workflow, API bridging, penalty regime |
 | companies-house | Companies Act 2006 filing requirements, size thresholds, late penalties |
-| payroll-uk | 2025/26 PAYE bands, NIC (employee 8%/2%, employer 15%), Employment Allowance, auto-enrolment, RTI, P11D |
+| payroll-uk | Date-aware payroll reference with deterministic lookups for high-risk rates, deadlines, and BiK timing |
 
 ## Configuration
 
 ### Annual Rate Updates
 
-At each tax year start (6 April), update `config/rates-2025-26.json` with the new tax year values and adjust the reference in `plugin.json`. All skills read rates from this file.
+The plugin no longer relies on a single yearly rates file. Update the effective-dated records in:
+
+- `finance-uk/data/rates/`
+- `finance-uk/data/forms/`
+- `finance-uk/data/deadlines/`
+
+Use the local tools in `finance-uk/tools/` to verify the new entries before updating skill prose.
 
 ### MCP Integration
 

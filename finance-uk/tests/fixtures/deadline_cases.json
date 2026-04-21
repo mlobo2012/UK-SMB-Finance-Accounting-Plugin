@@ -1,0 +1,38 @@
+[
+  {
+    "args": [
+      "--regime",
+      "vat_return",
+      "--facts",
+      "{\"period_end\":\"2026-06-30\"}"
+    ],
+    "expected": {
+      "ok": true,
+      "deadline": "2026-08-07"
+    }
+  },
+  {
+    "args": [
+      "--regime",
+      "ct600",
+      "--facts",
+      "{\"period_end\":\"2025-12-31\"}"
+    ],
+    "expected": {
+      "ok": true,
+      "deadline": "2026-12-31"
+    }
+  },
+  {
+    "args": [
+      "--regime",
+      "confirmation_statement",
+      "--facts",
+      "{\"review_period_end\":\"2026-04-30\"}"
+    ],
+    "expected": {
+      "ok": true,
+      "deadline": "2026-05-14"
+    }
+  }
+]

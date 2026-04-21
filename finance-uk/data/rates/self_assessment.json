@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "regime": "self_assessment",
+  "parameters": {
+    "mtd_itsa_phase_1_threshold": {
+      "unit": "gbp_qualifying_income",
+      "jurisdiction": "UK",
+      "values": [
+        {
+          "effective_from": "2026-04-06",
+          "effective_to": null,
+          "value": 50000,
+          "status": "enacted",
+          "source": {
+            "citation": "Making Tax Digital for Income Tax Self Assessment for sole traders and landlords",
+            "guidance_url": "https://www.gov.uk/government/publications/extension-of-making-tax-digital-for-income-tax-self-assessment-to-sole-traders-and-landlords/making-tax-digital-for-income-tax-self-assessment-for-sole-traders-and-landlords",
+            "verified_on": "2026-04-21"
+          }
+        }
+      ]
+    },
+    "mtd_itsa_phase_2_threshold": {
+      "unit": "gbp_qualifying_income",
+      "jurisdiction": "UK",
+      "values": [
+        {
+          "effective_from": "2027-04-06",
+          "effective_to": null,
+          "value": 30000,
+          "status": "enacted",
+          "source": {
+            "citation": "Making Tax Digital for Income Tax Self Assessment for sole traders and landlords",
+            "guidance_url": "https://www.gov.uk/government/publications/extension-of-making-tax-digital-for-income-tax-self-assessment-to-sole-traders-and-landlords/making-tax-digital-for-income-tax-self-assessment-for-sole-traders-and-landlords",
+            "verified_on": "2026-04-21"
+          }
+        }
+      ]
+    },
+    "mtd_itsa_phase_3_threshold": {
+      "unit": "gbp_qualifying_income",
+      "jurisdiction": "UK",
+      "values": [
+        {
+          "effective_from": "2028-04-06",
+          "effective_to": null,
+          "value": 20000,
+          "status": "announced",
+          "source": {
+            "citation": "Making Tax Digital for Income Tax Self Assessment for sole traders and landlords",
+            "guidance_url": "https://www.gov.uk/government/publications/extension-of-making-tax-digital-for-income-tax-self-assessment-to-sole-traders-and-landlords/making-tax-digital-for-income-tax-self-assessment-for-sole-traders-and-landlords",
+            "verified_on": "2026-04-21"
+          }
+        }
+      ]
+    },
+    "personal_allowance": {
+      "unit": "gbp_per_year",
+      "jurisdiction": "UK",
+      "values": [
+        {
+          "effective_from": "2025-04-06",
+          "effective_to": null,
+          "value": 12570,
+          "status": "enacted",
+          "source": {
+            "citation": "Income Tax rates and allowances",
+            "guidance_url": "https://www.gov.uk/government/publications/rates-and-allowances-income-tax/income-tax-rates-and-allowances-current-and-past",
+            "verified_on": "2026-04-21"
+          }
+        }
+      ]
+    }
+  }
+}

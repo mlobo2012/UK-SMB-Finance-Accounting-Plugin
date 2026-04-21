@@ -4,9 +4,9 @@ A UK finance and accounting plugin primarily designed for [Cowork](https://claud
 
 Built for **sole traders, freelancers, and SMBs** operating in the UK.
 
-> **Recommended model**: For best results, use the latest **Claude Opus** model. The plugin's skills involve complex UK tax calculations, multi-step regulatory logic, and nuanced accounting standards (FRS 102, Companies Act, HMRC rules) that benefit significantly from Opus-level reasoning. Sonnet will work for simpler tasks but may produce less reliable outputs on edge cases like partial exemption, FX translation reserves, or director's loan s.455 calculations.
+> **Recommended model**: For best results, use the latest **Claude Opus** model for accounting-heavy skills. For `/scan-invoices`, use **Claude Sonnet** because the workflow is tuned for batched vision extraction across page images.
 
-> **Important**: This plugin assists with UK finance and accounting workflows but does not provide financial, tax, or audit advice. All outputs should be reviewed by qualified financial professionals before use in financial reporting, regulatory filings, or audit documentation. Tax rates and thresholds reflect the 2025/26 tax year and should be verified against current HMRC guidance.
+> **Important**: This plugin assists with UK finance and accounting workflows but does not provide financial, tax, or audit advice. All outputs should be reviewed by qualified professionals before use in filings or regulated reporting. High-risk rates, fees, form lists, and deadlines are now stored in local effective-dated data files and should be verified via the local tools before you quote them.
 
 ## Installation
 
@@ -35,8 +35,28 @@ claude plugins add UK-SMB-Finance-Accounting-Plugin/finance-uk
 | `journal-entry-prep` | JE preparation best practices, standard UK accrual types, FRS 102 recognition criteria, capital allowances (AIA £1M, full expensing, WDA), approval matrices, and documentation standards |
 | `close-management` | Month-end close checklist with 5-day calendar including VAT reconciliation, PAYE payment deadlines (22nd electronic), annual close activities, accelerated 3-day close option, and sole trader simplified close |
 | `controls-testing` | UK Corporate Governance Code 2024 Provision 29, ISA (UK) 265 deficiency classification, sample size guidance, workpaper templates, and applicability matrix by company type (sole trader through listed) |
-| `payroll-uk` | Complete 2025/26 payroll reference — PAYE bands, employee NIC (8%/2%), employer NIC (15%), Employment Allowance (£10,500), auto-enrolment pension (3%/5%/8%), student loans, statutory payments, RTI, and P11D |
+| `payroll-uk` | Date-aware payroll reference — PAYE/NIC concepts, employer NIC, Employment Allowance, auto-enrolment, statutory payments, RTI, P11D, payrolling of benefits, and IR35 guardrails |
 | `scan-invoices` | Purchase invoice OCR orchestration with corrupt-file handling, 5-page extraction batches, arithmetic and duplicate validation, and workbook generation for purchase ledgers |
+
+## Deterministic Layer
+
+For the highest-risk modules, this plugin now includes local data and tool support:
+
+- `finance-uk/data/rates/` — effective-dated rates, thresholds, fees, and policy flags
+- `finance-uk/data/forms/` — CT600, Self Assessment, and Companies House form metadata
+- `finance-uk/data/deadlines/` — filing and payment deadline rules
+- `finance-uk/tools/lookup_rate.py`
+- `finance-uk/tools/list_forms.py`
+- `finance-uk/tools/find_deadline.py`
+- `finance-uk/tools/compute_tax.py`
+
+Example lookups:
+
+```bash
+python3 finance-uk/tools/lookup_rate.py --regime payroll --parameter mandatory_payrolling_bik_from --event-date 2026-07-01
+python3 finance-uk/tools/lookup_rate.py --regime companies_house --parameter cs01_digital_fee --event-date 2026-04-21
+python3 finance-uk/tools/find_deadline.py --regime vat_return --facts '{"period_end":"2026-06-30"}'
+```
 
 ## Example Workflows
 
@@ -148,20 +168,20 @@ Add your data source MCP servers to the `mcpServers` section of `.mcp.json` in t
 - `email` — Email for sending reports and requesting approvals
 - `chat` — Team communication for close status updates and questions
 
-## UK Tax Rates & Thresholds (2025/26)
+## Current Snapshot
 
-This plugin embeds current rates across all skills. Key figures:
+The plugin no longer treats a single tax year as the universal source of truth. Current local records include:
 
-| Rate | Value |
-|------|-------|
+| Item | Current local record |
+|------|----------------------|
 | Corporation Tax (main) | 25% (profits > £250K) |
 | Corporation Tax (small profits) | 19% (profits ≤ £50K) |
 | VAT standard rate | 20% |
 | VAT registration threshold | £90,000 |
 | Employer NIC | 15% above £5,000/year |
 | Employment Allowance | £10,500/year |
-| Personal Allowance | £12,570 |
-| AIA (Annual Investment Allowance) | £1,000,000 |
+| MTD ITSA phase 1 | Live from 6 April 2026 for qualifying income > £50,000 |
+| CS01 digital fee | £50 from 1 February 2026 |
 
 ## Supported Business Types
 

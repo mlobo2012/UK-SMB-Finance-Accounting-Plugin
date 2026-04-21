@@ -7,6 +7,17 @@ description: Use this skill when the user is preparing, reviewing, or discussing
 
 > This skill assists with journal entry preparation but does not constitute professional accounting advice. Consult a qualified accountant for decisions affecting your business.
 
+## Deterministic Guardrail
+
+If a journal entry explanation depends on a tax-year-sensitive rate, threshold, filing fee, or corporation-tax parameter, look it up first:
+
+```bash
+python3 finance-uk/tools/lookup_rate.py --regime payroll --parameter employer_nic_rate --event-date 2026-04-06
+python3 finance-uk/tools/lookup_rate.py --regime corporation_tax --parameter main_pool_wda_rate --event-date 2026-04-01
+```
+
+If no verified local record exists, say so and avoid inventing the figure.
+
 ## Standard Accrual Types
 
 ### 1. Accounts Payable Accruals
@@ -56,7 +67,7 @@ Dr  Trade debtors                          £X,XXX
 
 UK payroll accruals must include all employer-side costs:
 
-| Component | Rate/Amount (2025/26) | Account |
+| Component | Rate/Amount (verify for posting date) | Account |
 |-----------|----------------------|---------|
 | **Employer NIC (Class 1 secondary)** | **15%** above £5,000/year (£417/month) threshold | Employer NIC expense |
 | **Employer pension (auto-enrolment)** | **Minimum 3%** of qualifying earnings (£6,240–£50,270) | Pension contributions expense |
@@ -95,7 +106,7 @@ Dr  Insurance / Rent / Subscription expense £X,XXX
 
 UK businesses must track both **accounting depreciation** (per FRS 102 Section 17) and **capital allowances** (for Corporation Tax purposes). These are separate calculations.
 
-**Capital allowances (2025/26):**
+**Capital allowances (verify for the accounting period / chargeable period):**
 
 | Allowance | Rate | Eligibility |
 |-----------|------|-------------|

@@ -1,197 +1,111 @@
 ---
 name: payroll-uk
-description: Use this skill when the user discusses UK payroll, PAYE, National Insurance, employer NIC, auto-enrolment pensions, RTI, statutory payments (SSP, SMP, SPP), student loans, P11D, or payroll journal entries. Provides 2025/26 rates and thresholds for accounting purposes.
+description: Use this skill when the user discusses UK payroll, PAYE, National Insurance, employer NIC, auto-enrolment pensions, RTI, statutory payments, student loans, P11D, payrolling of benefits, or payroll journal entries. Use the local deterministic lookup tools before stating date-sensitive figures.
 ---
 
-# UK Payroll Reference — 2025/26
+# UK Payroll Reference
 
 > This skill provides payroll reference information for accounting purposes. It does not constitute payroll processing advice. Use HMRC-recognised payroll software for RTI submissions.
 
-## PAYE Income Tax Bands (England & Northern Ireland)
+## Deterministic Guardrail
 
-| Band | Taxable Income | Rate |
-|------|---------------|------|
-| Personal Allowance | Up to £12,570 | 0% |
-| Basic rate | £12,571 – £50,270 | 20% |
-| Higher rate | £50,271 – £125,140 | 40% |
-| Additional rate | Over £125,140 | 45% |
+Before stating any payroll rate, threshold, filing date, or benefits-in-kind effective date:
 
-Personal Allowance reduces by £1 for every £2 earned over £100,000, reaching zero at £125,140.
-## PAYE Income Tax Bands (Scotland)
+1. Run the local lookup tool from the plugin root.
+2. Use the returned value and source in the answer.
+3. If the tool returns `ok: false`, say there is no verified local record and do not guess.
 
-| Band | Taxable Income | Rate |
-|------|---------------|------|
-| Personal Allowance | Up to £12,570 | 0% |
-| Starter rate | £12,571 – £14,876 | 19% |
-| Basic rate | £14,877 – £26,561 | 20% |
-| Intermediate rate | £26,562 – £43,662 | 21% |
-| Higher rate | £43,663 – £75,000 | 42% |
-| Advanced rate | £75,001 – £125,140 | 45% |
-| Top rate | Over £125,140 | 48% |
+Examples:
 
-Scottish rates are set by the Scottish Parliament and apply to Scottish taxpayers (identified by tax code prefix 'S'). Wales currently matches England & Northern Ireland rates but has devolved power to vary them (identified by tax code prefix 'C').
+```bash
+python3 finance-uk/tools/lookup_rate.py --regime payroll --parameter employer_nic_rate --event-date 2026-04-06
+python3 finance-uk/tools/lookup_rate.py --regime payroll --parameter mandatory_payrolling_bik_from --event-date 2026-07-01
+python3 finance-uk/tools/find_deadline.py --regime p11d --facts '{"tax_year_end":"2026-04-05"}'
+```
 
-## National Insurance Contributions
+## High-Risk Snapshot
 
-### Employee NIC (Class 1 Primary)
+Use the tool outputs as the source of truth. The table below is only a quick orientation for the current hardening scope.
 
-| Earnings Band | Rate |
-|--------------|------|
-| Below Primary Threshold (£242/week, £1,048/month, £12,570/year) | 0% |
-| Primary Threshold to Upper Earnings Limit (£967/week, £4,189/month, £50,270/year) | 8% |
-| Above Upper Earnings Limit | 2% |
+| Item | 2025/26 | 2026/27 |
+|------|---------|---------|
+| Employer NIC rate | 15% | 15% |
+| Employer secondary threshold | £5,000/year | £5,000/year |
+| Lower Earnings Limit | £6,500/year | £6,708/year |
+| Employment Allowance | £10,500/year | £10,500/year |
+| SSP | £118.75/week | £123.25/week |
+| Mandatory payrolling of most BiKs | Not live | Not live |
 
-### Employer NIC (Class 1 Secondary)
+**Important:** Mandatory payrolling of most benefits in kind starts on **6 April 2027**, not 6 April 2026. For 2026/27, voluntary payrolling remains the position and the legacy registration deadline was **5 April 2026**.
 
-| Item | 2025/26 |
-|------|---------|
-| **Rate** | **15%** |
-| **Secondary Threshold** | £96/week, £417/month, £5,000/year |
-| Upper Secondary Threshold (under-21s, apprentices under 25, veterans) | £967/week, £4,189/month, £50,270/year |
-| **Employment Allowance** | **£10,500/year** |
+## PAYE and NIC Workflow
 
-**Employment Allowance eligibility:** All qualifying employers regardless of NIC bill (previous £100,000 cap removed). Excluded: single-director companies with no other employees paid above the secondary threshold.
+When the user asks a payroll question:
 
-### Class 1A NIC
-
-On benefits in kind (P11D items) at **15%** — payable annually by 22 July following tax year end.
-## Self-Employed NIC (Class 2 & Class 4)
-
-For sole traders and freelancers (assessed via Self Assessment):
-
-### Class 2 NIC
-
-| Item | 2025/26 |
-|------|---------|
-| **Rate** | **£3.45/week** |
-| **Small Profits Threshold** | £6,725/year |
-| **Status** | Voluntary from 2024/25 — no longer mandatory but counts towards State Pension qualification |
-
-Paying Class 2 voluntarily is advisable for sole traders wanting to build State Pension entitlement at minimal cost.
-
-### Class 4 NIC
-
-| Profits Band | Rate |
-|-------------|------|
-| Below Lower Profits Limit (£12,570) | 0% |
-| £12,570 – £50,270 | **6%** |
-| Above £50,270 | **2%** |
-
-Class 4 NIC is calculated on annual profits and collected via Self Assessment. No Employment Allowance applies to self-employed NIC.
-
-## Workplace Pension Auto-Enrolment
-
-| Parameter | Value |
-|-----------|-------|
-| Earnings trigger | £10,000/year (£833/month) |
-| Qualifying earnings lower limit | £6,240/year (£520/month) |
-| Qualifying earnings upper limit | £50,270/year (£4,189/month) |
-| **Minimum employer contribution** | **3%** of qualifying earnings |
-| **Minimum employee contribution** | **5%** (incl. tax relief) |
-| **Minimum total** | **8%** |
-
-Eligible jobholders: aged 22 to State Pension age, earning above trigger. Re-enrolment every 3 years.
-
-## Apprenticeship Levy
-
-| Item | Value |
-|------|-------|
-| Levy rate | **0.5%** of total annual pay bill |
-| Annual allowance | **£15,000** |
-| Effective threshold | Pay bill > **£3,000,000** |
-
-## Student Loan Deductions
-
-| Plan | Annual Threshold | Rate |
-|------|-----------------|------|
-| Plan 1 | £26,065 | 9% |
-| Plan 2 | £28,470 | 9% |
-| Plan 4 (Scotland) | £32,745 | 9% |
-| Postgraduate | £21,000 | 6% |
-
-## Statutory Payments
-
-| Payment | Rate (2025/26) |
-|---------|---------------|
-| **SSP** | £118.75/week (3 qualifying days waiting period) |
-| **SMP** first 6 weeks | 90% of AWE (no cap) |
-| **SMP** weeks 7–39 | £187.18/week or 90% AWE, whichever is lower |
-| **SPP** | £187.18/week or 90% AWE, whichever is lower |
-| SAP/ShPP/SPBP/NCP (after initial period) | £187.18/week flat rate |
-
-**Small Employers' Relief:** Recover **108.5%** of statutory payments. Larger employers: **92%**.
-
-## National Minimum/Living Wage (from 1 April 2025)
-
-| Band | Hourly Rate |
-|------|------------|
-| **NLW (21+)** | **£12.21** |
-| 18–20 | £10.00 |
-| Under 18 / Apprentice | £7.55 |
-| Accommodation offset | £10.66/day |
+1. Identify the tax date or pay period first.
+2. Look up the relevant rate or threshold locally.
+3. Distinguish between:
+   - employee deductions;
+   - employer costs;
+   - annual reporting items such as P11D and Class 1A NIC.
+4. If the question is about a live payroll run, recommend payroll software as the execution system and use this skill as an explanation and review layer.
 
 ## RTI (Real Time Information)
 
-| Submission | Timing | Content |
-|-----------|--------|---------|
-| **FPS** | On or before each pay date | Employee details, pay, tax, NIC, student loans, pension |
-| **EPS** | By 19th of following month | Statutory recoveries, Employment Allowance, Apprenticeship Levy |
-| **Year-end FPS** | After last pay run | Year-end indicator, P60 data |
+| Submission | Timing | Notes |
+|-----------|--------|-------|
+| **FPS** | On or before each pay date | Includes pay, tax, NIC, student loans, starter/leaver data |
+| **EPS** | By the 19th of the following month | Used for statutory recoveries, Employment Allowance, Apprenticeship Levy, nil periods |
+| **P60** | By 31 May after tax year end | Use deadline tool for the exact filing year context |
+| **P11D / P11D(b)** | By 6 July after tax year end | Benefits reporting still required where benefits are not being payrolled |
+| **Class 1A NIC payment** | By 22 July electronically | Due after the tax year on P11D benefits |
 
-## P11D Benefits in Kind
+## Benefits in Kind
 
-Reportable: company cars, private medical insurance, interest-free loans (>£10,000), accommodation, childcare (above exempt limit). Deadline: 6 July. Class 1A NIC due: 22 July. Many benefits can now be payrolled to avoid P11D reporting.
+- 2026/27 remains a **voluntary payrolling** year for most benefits.
+- Mandatory reporting and payment of Income Tax and Class 1A NIC through payroll starts **6 April 2027** for most BiKs.
+- Employment-related loans and living accommodation remain special cases and should not be assumed to follow the general rule without checking current guidance.
+- If the user asks whether a business must payroll benefits now, answer from the tool-backed date first, then explain the transitional position.
 
-## Journal Entry Summary — Monthly Payroll
+## Auto-Enrolment
 
-```
-Account                              Dr (£)        Cr (£)
-Wages and salaries                   XX,XXX
-Employer NIC                          X,XXX
-Employer pension contributions        X,XXX
-Apprenticeship Levy (if applicable)     XXX
-  Net wages payable                                 XX,XXX
-  PAYE creditor (HMRC)                               X,XXX
-  Employee NIC creditor (HMRC)                        X,XXX
-  Employer NIC creditor (HMRC)                        X,XXX
-  Student loan creditor (HMRC)                          XXX
-  Employee pension creditor                             XXX
-  Employer pension creditor                           X,XXX
-  Apprenticeship Levy creditor                          XXX
-```
+Auto-enrolment remains a minimum-contribution regime:
 
+- minimum employer contribution: 3% of qualifying earnings
+- minimum employee contribution: 5% including tax relief
+- minimum total: 8%
 
-## IR35 / Off-Payroll Working Rules
+Treat these as minimum compliance numbers, not scheme design advice.
 
-### Overview
+## Student Loans and Statutory Payments
 
-IR35 determines whether a contractor is genuinely self-employed or should be treated as an employee for tax purposes. The rules affect PAYE, NIC, and pension obligations.
+Student loan thresholds and statutory payment rates change over time. Do not quote them from memory. Use the local data layer when the answer depends on the tax year.
 
-### Responsibility for Determination
+## IR35 / Off-Payroll Working
 
-| Client Size | Who Determines Status? |
-|------------|----------------------|
-| **Small company** (meets 2 of 3: turnover ≤ £10.2M, balance sheet ≤ £5.1M, employees ≤ 50) | **Contractor** self-assesses |
-| **Medium/Large company or public sector** | **Client** determines status via Status Determination Statement (SDS) |
+Handle IR35 conservatively:
 
-### If Inside IR35
+- **Chapter 8** applies where the client is small or the worker is dealing with the old intermediary rules.
+- **Chapter 10** applies where the end client is medium or large, or in the public sector.
+- From **6 April 2025**, the small-company thresholds moved to **£15m turnover / £7.5m balance sheet / 50 employees**. HMRC guidance says this usually does **not** affect off-payroll status in practice until **6 April 2027 at the earliest**, because the size test looks back.
+- HMRC says it will stand by a CEST result where the information is accurate and the arrangements are not contrived.
+- Do **not** make a definitive IR35 determination inside this skill. Explain the framework, status determination statement process, and where specialist review is needed.
+- Do **not** present the 5% admin allowance as a universal rule. It is relevant to the Chapter 8 deemed payment calculation, not the Chapter 10 fee-payer regime generally.
 
-- Fee-payer (client or agency) must deduct PAYE, employee NIC, and employer NIC before paying the contractor's PSC
-- Apprenticeship Levy applies if fee-payer's pay bill > £3M
-- Contractor's PSC receives net payment after deemed employment deductions
-- 5% flat-rate expense allowance for the contractor's PSC
+## Journal Entry Reminder
 
-### HMRC CEST Tool
+For payroll journals, include:
 
-HMRC's Check Employment Status for Tax (CEST) tool provides a non-binding indication. Key factors: control, substitution, mutuality of obligation.
+- gross wages
+- PAYE and employee NIC deductions
+- employer NIC
+- employer pension contributions
+- Apprenticeship Levy where applicable
+- holiday pay accrual adjustments
+- statutory payment recoveries where relevant
 
-### Accounting Impact
+If the entry depends on a tax-year threshold or rate, look it up first and cite the result.
 
-For engagements caught by IR35, the fee-payer must account for the deemed employment payment through payroll. The contractor's PSC should track the deemed payment calculations and retain records for potential HMRC enquiry.
-
-> **Important:** IR35 status has significant tax consequences. Seek specialist advice for borderline cases. HMRC actively investigates non-compliance.
 ## Holiday Pay Accrual
 
-UK law mandates 5.6 weeks (28 days for full-time) statutory leave including bank holidays (Working Time Regulations 1998). Holiday pay accrual is **always required** under FRS 102 Section 28.
-
-Calculation: (Unused holiday days at period end / Working days in period) x Period staff costs
+UK statutory leave remains 5.6 weeks for a full-time worker under the Working Time Regulations 1998. Holiday pay accrual is an accounting estimate question, not a lookup-rate question, so explain the basis and assumptions clearly.

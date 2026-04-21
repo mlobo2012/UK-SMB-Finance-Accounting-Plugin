@@ -1,0 +1,181 @@
+{
+  "schema_version": 1,
+  "regime": "corporation_tax",
+  "parameters": {
+    "main_rate": {
+      "unit": "ratio",
+      "jurisdiction": "UK",
+      "values": [
+        {
+          "effective_from": "2023-04-01",
+          "effective_to": null,
+          "value": 0.25,
+          "status": "enacted",
+          "source": {
+            "citation": "Corporation Tax rates",
+            "guidance_url": "https://www.gov.uk/corporation-tax-rates/rates",
+            "verified_on": "2026-04-21"
+          }
+        }
+      ]
+    },
+    "small_profits_rate": {
+      "unit": "ratio",
+      "jurisdiction": "UK",
+      "values": [
+        {
+          "effective_from": "2023-04-01",
+          "effective_to": null,
+          "value": 0.19,
+          "status": "enacted",
+          "source": {
+            "citation": "Corporation Tax rates",
+            "guidance_url": "https://www.gov.uk/corporation-tax-rates/rates",
+            "verified_on": "2026-04-21"
+          }
+        }
+      ]
+    },
+    "lower_profits_limit": {
+      "unit": "gbp",
+      "jurisdiction": "UK",
+      "values": [
+        {
+          "effective_from": "2023-04-01",
+          "effective_to": null,
+          "value": 50000,
+          "status": "enacted",
+          "source": {
+            "citation": "Corporation Tax rates",
+            "guidance_url": "https://www.gov.uk/corporation-tax-rates/rates",
+            "verified_on": "2026-04-21"
+          }
+        }
+      ]
+    },
+    "upper_profits_limit": {
+      "unit": "gbp",
+      "jurisdiction": "UK",
+      "values": [
+        {
+          "effective_from": "2023-04-01",
+          "effective_to": null,
+          "value": 250000,
+          "status": "enacted",
+          "source": {
+            "citation": "Corporation Tax rates",
+            "guidance_url": "https://www.gov.uk/corporation-tax-rates/rates",
+            "verified_on": "2026-04-21"
+          }
+        }
+      ]
+    },
+    "marginal_relief_fraction": {
+      "unit": "ratio",
+      "jurisdiction": "UK",
+      "values": [
+        {
+          "effective_from": "2023-04-01",
+          "effective_to": null,
+          "value": 0.015,
+          "status": "enacted",
+          "source": {
+            "citation": "Corporation Tax marginal relief",
+            "guidance_url": "https://www.gov.uk/guidance/corporation-tax-marginal-relief",
+            "verified_on": "2026-04-21"
+          }
+        }
+      ]
+    },
+    "annual_investment_allowance_limit": {
+      "unit": "gbp_per_year",
+      "jurisdiction": "UK",
+      "values": [
+        {
+          "effective_from": "2023-04-01",
+          "effective_to": null,
+          "value": 1000000,
+          "status": "enacted",
+          "source": {
+            "citation": "Work out your capital allowances",
+            "guidance_url": "https://www.gov.uk/capital-allowances",
+            "verified_on": "2026-04-21"
+          }
+        }
+      ]
+    },
+    "main_pool_wda_rate": {
+      "unit": "ratio",
+      "jurisdiction": "UK",
+      "values": [
+        {
+          "effective_from": "2023-04-01",
+          "effective_to": "2026-03-31",
+          "value": 0.18,
+          "status": "enacted",
+          "source": {
+            "citation": "Work out your writing down allowances",
+            "guidance_url": "https://www.gov.uk/work-out-capital-allowances/rates-and-pools",
+            "verified_on": "2026-04-21"
+          }
+        },
+        {
+          "effective_from": "2026-04-01",
+          "effective_to": null,
+          "value": 0.14,
+          "status": "enacted",
+          "source": {
+            "citation": "Work out your writing down allowances",
+            "guidance_url": "https://www.gov.uk/work-out-capital-allowances/rates-and-pools",
+            "verified_on": "2026-04-21"
+          }
+        }
+      ]
+    },
+    "main_rate_first_year_allowance": {
+      "unit": "ratio",
+      "jurisdiction": "UK",
+      "values": [
+        {
+          "effective_from": "2026-01-01",
+          "effective_to": null,
+          "value": 0.40,
+          "status": "enacted",
+          "source": {
+            "citation": "Business investment boosted with new tax relief taking effect today",
+            "guidance_url": "https://www.gov.uk/government/news/business-investment-boosted-with-new-tax-relief-taking-effect-today",
+            "verified_on": "2026-04-21"
+          }
+        }
+      ]
+    },
+    "s455_rate": {
+      "unit": "ratio",
+      "jurisdiction": "UK",
+      "values": [
+        {
+          "effective_from": "2022-04-06",
+          "effective_to": "2026-04-05",
+          "value": 0.3375,
+          "status": "enacted",
+          "source": {
+            "citation": "Corporation Tax on loans to participators",
+            "guidance_url": "https://www.gov.uk/hmrc-internal-manuals/company-taxation-manual/ctm61505",
+            "verified_on": "2026-04-21"
+          }
+        },
+        {
+          "effective_from": "2026-04-06",
+          "effective_to": null,
+          "value": 0.3575,
+          "status": "announced",
+          "source": {
+            "citation": "Budget 2025",
+            "guidance_url": "https://www.gov.uk/government/publications/budget-2025-document/budget-2025-html",
+            "verified_on": "2026-04-21"
+          }
+        }
+      ]
+    }
+  }
+}
