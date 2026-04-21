@@ -1,6 +1,6 @@
 # UK SMB Finance & Accounting Plugin
 
-A UK finance and accounting plugin primarily designed for [Cowork](https://claude.com/product/cowork), Anthropic's agentic desktop application — though it also works in Claude Code. Supports month-end close, journal entry preparation, account reconciliation, financial statement generation, variance analysis, VAT reconciliation, MTD filing, Companies House compliance, and internal controls testing — all under FRS 102/IFRS, Companies Act 2006, and HMRC regulations.
+A UK finance and accounting plugin primarily designed for [Cowork](https://claude.com/product/cowork), Anthropic's agentic desktop application — though it also works in Claude Code. Supports month-end close, journal entry preparation, purchase invoice scanning, account reconciliation, financial statement generation, variance analysis, VAT reconciliation, MTD filing, Companies House compliance, and internal controls testing — all under FRS 102/IFRS, Companies Act 2006, and HMRC regulations.
 
 Built for **sole traders, freelancers, and SMBs** operating in the UK.
 
@@ -23,6 +23,7 @@ claude plugins add UK-SMB-Finance-Accounting-Plugin/finance-uk
 | `/reconciliation` | Account reconciliation — compare GL balances to subledger, bank (BACS/Faster Payments/Open Banking), or intercompany balances and identify reconciling items |
 | `/variance-analysis` | Variance/flux analysis — decompose variances into price/volume/mix drivers with narrative explanations, waterfall analysis, and UK-specific considerations |
 | `/internal-controls` | Internal controls testing — generate testing workpapers, sample selections, and control assessments aligned with UK Corporate Governance Code 2024 and ISA (UK) |
+| `/scan-invoices` | Purchase invoice scanning — convert scanned PDFs into page images, extract UK purchase ledger data from invoices and credit notes, validate it, and build an `.xlsx` workbook for VAT review |
 | `/vat-reconciliation` | VAT reconciliation — reconcile the VAT control account and prepare the 9-box MTD return with output/input VAT analysis and partial exemption handling |
 | `/mtd-filing` | Making Tax Digital — prepare VAT quarterly returns and ITSA quarterly updates via HMRC API, with filing deadlines and penalty regime guidance |
 | `/companies-house` | Companies House filings — prepare annual accounts, confirmation statements, classify company size, check audit exemption, and track filing deadlines with late penalty schedule |
@@ -35,6 +36,7 @@ claude plugins add UK-SMB-Finance-Accounting-Plugin/finance-uk
 | `close-management` | Month-end close checklist with 5-day calendar including VAT reconciliation, PAYE payment deadlines (22nd electronic), annual close activities, accelerated 3-day close option, and sole trader simplified close |
 | `controls-testing` | UK Corporate Governance Code 2024 Provision 29, ISA (UK) 265 deficiency classification, sample size guidance, workpaper templates, and applicability matrix by company type (sole trader through listed) |
 | `payroll-uk` | Complete 2025/26 payroll reference — PAYE bands, employee NIC (8%/2%), employer NIC (15%), Employment Allowance (£10,500), auto-enrolment pension (3%/5%/8%), student loans, statutory payments, RTI, and P11D |
+| `scan-invoices` | Purchase invoice OCR orchestration with corrupt-file handling, 5-page extraction batches, arithmetic and duplicate validation, and workbook generation for purchase ledgers |
 
 ## Example Workflows
 
@@ -50,10 +52,20 @@ claude plugins add UK-SMB-Finance-Accounting-Plugin/finance-uk
 
 ### VAT Return & MTD Filing
 
-1. Run `/vat-reconciliation 2025-Q2` to reconcile output and input VAT
-2. Review the 9-box return preparation and check for partial exemption
-3. Run `/mtd-filing vat 2025-Q2` to walk through the HMRC MTD submission workflow
-4. Verify filing deadline and penalty regime exposure
+1. Run `/scan-invoices "/path/to/purchase-invoices" --quarter 2025-Q2` to build the purchase ledger workbook from scanned supplier invoices
+2. Review the Invoice Register and Validation Report sheets for low-confidence items or duplicates
+3. Run `/vat-reconciliation 2025-Q2` to reconcile output and input VAT
+4. Review the 9-box return preparation and check for partial exemption
+5. Run `/mtd-filing vat 2025-Q2` to walk through the HMRC MTD submission workflow
+6. Verify filing deadline and penalty regime exposure
+
+### Purchase Invoice Scanner
+
+1. Run `/scan-invoices "/path/to/purchase-invoices"` to process a full invoice folder
+2. Optional: add `--quarter 2025-Q3` to flag out-of-period invoices
+3. Optional: add `--sample-pages 15 --seed 42` to do a reproducible QA pass before the full run
+4. Review the generated workbook sheets: Invoice Register, VAT Summary, Validation Report, and Processing Log
+
 
 ### Variance Analysis
 

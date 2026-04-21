@@ -1,7 +1,7 @@
 {
   "name": "uk-accounting",
-  "version": "1.0.2",
-  "description": "UK — Finance & Accounting: journal entries, reconciliation, financial statements, VAT, MTD, payroll, Companies House, and internal controls. Built for sole traders, freelancers, and SMBs under FRS 102/IFRS, Companies Act 2006, and HMRC regulations.",
+  "version": "1.1.0",
+  "description": "UK — Finance & Accounting: journal entries, reconciliation, purchase invoice scanning, financial statements, VAT, MTD, payroll, Companies House, and internal controls. Built for sole traders, freelancers, and SMBs under FRS 102/IFRS, Companies Act 2006, and HMRC regulations.",
   "author": {
     "name": "AI Heroes",
     "url": "https://www.ai-heroes.co"

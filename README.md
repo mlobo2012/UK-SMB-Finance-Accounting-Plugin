@@ -1,6 +1,6 @@
 # UK SMB Finance & Accounting Plugin
 
-A Claude Code / Cowork plugin for UK finance and accounting workflows — journal entries, reconciliation, financial statements, VAT, MTD, payroll, Companies House, and internal controls. Built for sole traders, freelancers, and SMBs under FRS 102/IFRS, Companies Act 2006, and HMRC regulations.
+A Claude Code / Cowork plugin for UK finance and accounting workflows — journal entries, reconciliation, purchase invoice scanning, financial statements, VAT, MTD, payroll, Companies House, and internal controls. Built for sole traders, freelancers, and SMBs under FRS 102/IFRS, Companies Act 2006, and HMRC regulations.
 
 > 🏗️ **Architecture:** This plugin is built on and derived from the
 > official
@@ -23,6 +23,7 @@ A Claude Code / Cowork plugin for UK finance and accounting workflows — journa
 | `/reconciliation` | Account reconciliation — GL vs. subledger, bank (BACS/Faster Payments/Open Banking), intercompany |
 | `/variance-analysis` | Variance/flux analysis — price/volume/mix decomposition with narrative and waterfall charts |
 | `/internal-controls` | Internal controls testing — workpapers, sample selections, UK Corporate Governance Code 2024, ISA (UK) |
+| `/scan-invoices` | Purchase invoice scanning — render scanned PDF pages, extract purchase ledger data from invoices and credit notes, validate it, and build an Excel workbook for VAT review |
 | `/vat-reconciliation` | VAT reconciliation — VAT control account, 9-box MTD return, partial exemption handling |
 | `/mtd-filing` | Making Tax Digital — VAT quarterly returns and ITSA updates via HMRC API, deadlines and penalties |
 | `/companies-house` | Companies House — annual accounts, confirmation statements, size classification, audit exemption, filing deadlines |
@@ -39,6 +40,7 @@ A Claude Code / Cowork plugin for UK finance and accounting workflows — journa
 | close-management | Month-end close checklist with VAT deadlines, PAYE 22nd payment, annual close activities |
 | controls-testing | UK Corporate Governance Code 2024 Provision 29, ISA (UK) 265 deficiency classification |
 | internal-controls | Full ICS assessment framework for UK entities |
+| scan-invoices | Batched purchase invoice OCR workflow with PDF-to-image conversion, vision extraction, validation flags, duplicate detection, and workbook generation for VAT-ready purchase ledgers |
 | vat-reconciliation | VAT control account reconciliation, 9-box return, partial exemption, reverse charge |
 | mtd-filing | HMRC MTD VAT & ITSA filing workflow, API bridging, penalty regime |
 | companies-house | Companies Act 2006 filing requirements, size thresholds, late penalties |
@@ -75,10 +77,24 @@ Claude books PAYE, employer NIC (15%), auto-enrolment pension (3% employer / 5% 
 ### VAT Return Q1 2026
 
 ```
+/scan-invoices "/path/to/purchase-invoices" --quarter 2025-Q3
+```
+
+Claude renders the scanned purchase invoice PDFs, extracts invoice fields in batches, validates arithmetic and duplicates, and writes a purchase ledger workbook you can review before filing.
+
+```
 /vat-reconciliation 2026-Q1
 ```
 
 Claude reconciles output/input VAT, prepares the 9-box MTD return, handles partial exemption and reverse charge, and walks through the HMRC submission.
+
+### Purchase Invoice QA Run
+
+```
+/scan-invoices "/path/to/purchase-invoices" --quarter 2025-Q3 --sample-pages 15 --seed 42
+```
+
+Claude processes a reproducible random subset of pages, which is useful for prompt tuning and OCR QA before you run the full archive.
 
 ### Annual Accounts 2025-26
 
@@ -93,7 +109,7 @@ Claude generates P&L (Format 1), Balance Sheet, and notes under Companies Act / 
 ```
 ├── finance-uk/                          # The plugin (canonical source)
 │   ├── .claude-plugin/plugin.json       # Plugin manifest
-│   ├── skills/                          # 12 skill files (8 invocable + 4 background)
+│   ├── skills/                          # 13 skill files including purchase invoice scanning
 │   ├── README.md                        # Full plugin documentation
 │   ├── [CONNECTORS.md](finance-uk/CONNECTORS.md) # MCP connector categories
 │   ├── .mcp.json                        # MCP server configuration
@@ -135,7 +151,7 @@ git clone https://github.com/mlobo2012/UK-SMB-Finance-Accounting-Plugin.git
 claude --plugin-dir ./UK-SMB-Finance-Accounting-Plugin/finance-uk
 ```
 
-After installation, use `/journal-entry`, `/reconciliation`, `/vat-reconciliation`, etc.
+After installation, use `/journal-entry`, `/scan-invoices`, `/reconciliation`, `/vat-reconciliation`, etc.
 
 ## Documentation
 
